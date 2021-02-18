@@ -72,7 +72,13 @@ function keyboardEvent(evt) {
   }
 }
 //функция для кнопки "закрыть"
-function btnCloseClick() {
+function btnCloseClick(evt) {
+  const isDivLightbox__overlay = evt.target.classList.contains(
+    "lightbox__overlay"
+  );
+  if (!isDivLightbox__overlay) {
+    return;
+  }
   removeClass(); //модальное окно неактивно
 }
 //добавление класса "is-open"
