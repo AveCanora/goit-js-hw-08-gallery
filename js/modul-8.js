@@ -73,14 +73,13 @@ function keyboardEvent(evt) {
 }
 //функция для кнопки "закрыть"
 function btnCloseClick(evt) {
-  const isDivLightbox__overlay = evt.target.classList.contains(
-    "lightbox__overlay"
-  );
-  if (!isDivLightbox__overlay) {
+  const islightbox__image = evt.target.classList.contains("lightbox__image");
+  if (islightbox__image) {
     return;
   }
   removeClass(); //модальное окно неактивно
 }
+
 //добавление класса "is-open"
 function addClass() {
   refs.divLightbox.classList.add("is-open");
